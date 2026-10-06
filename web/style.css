@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #111318;
+  color: #e6e8ed;
+  font:
+    13px -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #8da4ff;
+  outline-offset: 2px;
+}
+main {
+  max-width: 1600px;
+  margin: auto;
+}
+header {
+  height: 90px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #292c35;
+}
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.mark {
+  font-size: 32px;
+  color: #8da4ff;
+}
+h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+h2 {
+  font-size: 15px;
+  font-weight: 500;
+}
+h3 {
+  font-size: 13px;
+  color: #a5aab6;
+}
+p {
+  margin: 6px 0;
+  color: #999fac;
+}
+.readonly {
+  font-size: 11px;
+  color: #8cbbab;
+  border: 1px solid #33473e;
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+.toolbar {
+  display: flex;
+  gap: 12px;
+  padding: 18px 28px;
+  border-bottom: 1px solid #292c35;
+}
+select,
+input,
+.toolbar button,
+.detailhead button,
+.error button {
+  background: #1b1e26;
+  border: 1px solid #353a46;
+  border-radius: 6px;
+  padding: 9px 12px;
+}
+input {
+  flex: 1;
+  min-width: 100px;
+}
+select {
+  max-width: 250px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(400px, 1.25fr) minmax(300px, 1fr);
+  min-height: 520px;
+}
+.history {
+  overflow: auto;
+  max-height: 70vh;
+}
+.commit {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #22252d;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-width: 540px;
+  text-align: left;
+  height: 62px;
+  padding: 0 18px 0 10px;
+  gap: 12px;
+}
+.commit:hover {
+  background: #1b1f29;
+}
+.commit.selected {
+  background: #252d44;
+  box-shadow: inset 3px 0 #8da4ff;
+}
+.commit.muted {
+  opacity: 0.22;
+}
+.commit svg {
+  flex-shrink: 0;
+}
+.committext {
+  flex: 1;
+  min-width: 0;
+}
+.subject {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+.meta {
+  margin-top: 7px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: #8f96a5;
+}
+.meta code {
+  color: #a9b7d3;
+}
+.refs {
+  display: flex;
+  gap: 5px;
+  max-width: 190px;
+  overflow: hidden;
+}
+.refs span {
+  font:
+    10px ui-monospace,
+    monospace;
+  border: 1px solid #3b465b;
+  background: #222a39;
+  color: #b7c7e6;
+  border-radius: 4px;
+  padding: 4px;
+  white-space: nowrap;
+}
+aside {
+  border-left: 1px solid #292c35;
+  padding: 22px;
+  overflow: auto;
+  max-height: 70vh;
+  background: #15171c;
+}
+.detailhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    11px/1.7 ui-monospace,
+    SFMono-Regular,
+    monospace;
+  color: #b7bdca;
+}
+.patch {
+  white-space: pre;
+  overflow: auto;
+  color: #c6d5c8;
+}
+.empty {
+  padding: 90px 25px;
+  text-align: center;
+  color: #959ba8;
+}
+.empty span {
+  font-size: 36px;
+  color: #657395;
+}
+.more {
+  background: #1b1e26;
+  color: #b7c7e6;
+  border: 1px solid #353a46;
+  padding: 10px 25px;
+  margin: 20px;
+  border-radius: 6px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 28px;
+  border-top: 1px solid #292c35;
+  font-size: 11px;
+  color: #828a99;
+}
+.error {
+  background: #46252a;
+  padding: 12px 28px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 760px) {
+  header,
+  .toolbar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .toolbar {
+    flex-wrap: wrap;
+  }
+  .workspace {
+    display: block;
+  }
+  .history {
+    max-height: 55vh;
+  }
+  aside {
+    border-left: 0;
+    border-top: 1px solid #292c35;
+    max-height: 45vh;
+  }
+  .empty {
+    padding: 35px 20px;
+  }
+  footer span {
+    display: none;
+  }
+}

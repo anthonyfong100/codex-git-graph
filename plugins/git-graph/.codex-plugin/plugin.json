@@ -1,0 +1,7 @@
+{
+  "name": "git-graph",
+  "version": "0.1.0",
+  "description": "Explore local Git history with an interactive commit graph.",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
